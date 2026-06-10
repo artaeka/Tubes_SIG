@@ -91,7 +91,7 @@ Sistem ini mengimplementasikan analisis spasial GIS tingkat lanjut menggunakan e
    ```bash
    uvicorn app.main:app --reload
    ```
-   * *Akses dokumentasi Swagger REST API di alamat:* `http://127.0.0.1:8000/docs`
+   * *Akses dokumentasi Swagger REST API di alamat:* `http://localhost:8000/docs`
 
 ### **Langkah 3: Menjalankan Frontend & Gateway (React & Express - Port 3000)**
 1. Buka terminal baru di VS Code, lalu masuk ke direktori frontend:

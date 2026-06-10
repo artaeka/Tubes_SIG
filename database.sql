@@ -85,7 +85,7 @@ CREATE INDEX idx_fasilitas_geom ON fasilitas_umum USING gist (geom_point);
 -- PENGISIAN DATA SAMPEL (DENGAN KOORDINAT TULUNGAGUNG RIIL)
 -- ═══════════════════════════════════════════════════════════════════════════════
 
--- B. Data Kecamatan (12 record MultiPolygon, diubah via ST_Multi dari Polygon)
+-- Data Kecamatan (12 record MultiPolygon, diubah via ST_Multi dari Polygon)
 INSERT INTO kecamatan (nama_kecamatan, geom_polygon) VALUES
 ('Kecamatan Tulungagung', ST_Multi(ST_GeomFromText('POLYGON((111.890 -8.070, 111.910 -8.070, 111.910 -8.050, 111.890 -8.050, 111.890 -8.070))', 4326))),
 ('Kecamatan Kedungwaru', ST_Multi(ST_GeomFromText('POLYGON((111.890 -8.050, 111.920 -8.050, 111.920 -8.020, 111.890 -8.020, 111.890 -8.050))', 4326))),
@@ -100,7 +100,7 @@ INSERT INTO kecamatan (nama_kecamatan, geom_polygon) VALUES
 ('Kecamatan Pakel', ST_Multi(ST_GeomFromText('POLYGON((111.800 -8.160, 111.850 -8.160, 111.850 -8.120, 111.800 -8.120, 111.800 -8.160))', 4326))),
 ('Kecamatan Sumbergempol', ST_Multi(ST_GeomFromText('POLYGON((111.920 -8.110, 111.960 -8.110, 111.960 -8.070, 111.920 -8.070, 111.920 -8.110))', 4326)));
 
--- C. Data Titik Transportasi (20 record Point Halte asli Tulungagung)
+-- Data Titik Transportasi (20 record Point Halte asli Tulungagung)
 INSERT INTO titik_transportasi (nama_titik, jenis_titik, alamat, geom_point) VALUES
 ('Halte Stasiun Utama', 'halte', 'Jl. Pangeran Antasari, Tulungagung', ST_GeomFromText('POINT(111.9031 -8.0583)', 4326)),
 ('Halte Pasar Wage', 'halte', 'Jl. Jenderal Sudirman, Tulungagung', ST_GeomFromText('POINT(111.9042 -8.0556)', 4326)),
@@ -123,7 +123,7 @@ INSERT INTO titik_transportasi (nama_titik, jenis_titik, alamat, geom_point) VAL
 ('Halte Tanggunggunung', 'halte', 'Jl. Raya Tanggunggunung, Tanggunggunung', ST_GeomFromText('POINT(111.9010 -8.2250)', 4326)),
 ('Halte Gondang', 'halte', 'Jl. Raya Gondang, Gondang', ST_GeomFromText('POINT(111.8021 -8.0854)', 4326));
 
--- D. Data Rute AKDP (20 record MultiLineString - Memenuhi batas minimal tugas besar)
+-- Data Rute AKDP (20 record MultiLineString)
 INSERT INTO rute_akdp (nama_trayek, kode_trayek, titik_awal, titik_akhir, jenis_angkutan, jalur_dilalui, panjang_rute, waktu_tempuh, jam_operasional, tarif, status_rute, geom_linestring) VALUES
 ('Trayek Stasiun - Pasar', 'TR-01', 'Stasiun Tulungagung', 'Pasar Wage', 'Angkot', 'Jl. Antasari - Jl. Sudirman', 2.5, '10 menit', '06:00 - 17:00', 5000.00, TRUE, ST_Multi(ST_GeomFromText('LINESTRING(111.9031 -8.0583, 111.9042 -8.0556)', 4326))),
 ('Trayek Gayatri - Ngunut', 'TR-02', 'Terminal Gayatri', 'Halte Ngunut', 'Bus Medium', 'Jl. Yos Sudarso - Ngrowo - Ngunut', 12.0, '25 menit', '05:00 - 18:00', 8000.00, TRUE, ST_Multi(ST_GeomFromText('LINESTRING(111.9054 -8.0621, 111.9015 -8.0662, 111.9095 -8.0483, 111.9821 -8.1121)', 4326))),
@@ -146,7 +146,7 @@ INSERT INTO rute_akdp (nama_trayek, kode_trayek, titik_awal, titik_akhir, jenis_
 ('Trayek Bandung - Pakel', 'TR-19', 'Halte Bandung', 'Halte Pakel', 'Feeder', 'Bandung - Pakel', 9.2, '20 menit', '06:00 - 17:00', 5000.00, TRUE, ST_Multi(ST_GeomFromText('LINESTRING(111.7821 -8.1820, 111.8152 -8.1451)', 4326))),
 ('Trayek Tulungagung Kota - Ngunut', 'TR-20', 'Halte Tulungagung Kota', 'Halte Ngunut', 'Bus Medium', 'Kota - Ngunut Bypass', 15.4, '30 menit', '05:00 - 18:00', 10000.00, TRUE, ST_Multi(ST_GeomFromText('LINESTRING(111.9015 -8.0662, 111.9821 -8.1121)', 4326)));
 
--- E. Data Relasi Rute-Titik (RuteTitik)
+-- Data Relasi Rute-Titik (RuteTitik)
 INSERT INTO rute_titik (id_rute, id_titik, urutan) VALUES
 -- Rute 1
 (1, 1, 1), (1, 2, 2),
@@ -189,7 +189,7 @@ INSERT INTO rute_titik (id_rute, id_titik, urutan) VALUES
 -- Rute 20
 (20, 13, 1), (20, 5, 2);
 
--- F. Data Fasilitas Umum (20 record Point asli Tulungagung)
+-- Data Fasilitas Umum
 INSERT INTO fasilitas_umum (nama_fasilitas, jenis_fasilitas, alamat, geom_point) VALUES
 ('RSUD Dr. Iskak Tulungagung', 'Rumah Sakit', 'Jl. Dr. Wahidin Sudirohusodo', ST_GeomFromText('POINT(111.9125 -8.0521)', 4326)),
 ('UIN Sayyid Ali Rahmatullah (UIN SATU)', 'Kampus', 'Jl. Mayor Sujadi No. 46, Plosokandang', ST_GeomFromText('POINT(111.9161 -8.0825)', 4326)),
