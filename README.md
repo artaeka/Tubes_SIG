@@ -6,8 +6,6 @@
 
 ### 👥 Kelompok 10 - "TulangTulung"
 
-
-| Tim pengembang: |
 |Role | Nama Anggota | NIM |
 | :--- | :--- | :--- |
 | Dokumentasi Proposal & Laporan final | **Mekar Cendra Narwastu** | 123140074 |
