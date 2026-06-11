@@ -6,12 +6,14 @@
 
 ### 👥 Kelompok 10 - "TulangTulung"
 
-| Nama Anggota | NIM |
-| :--- | :--- |
-| **Mekar Cendra Narwastu** | 123140074 |
-| **Mei Disti Ayuningtias** | 123140076 |
-| **Sahiva Syamdo Vinoza** | 123140194 |
-| **Arta Eka Yuly Rajagukguk** | 123140209 |
+
+| Tim pengembang: |
+|Role | Nama Anggota | NIM |
+| :--- | :--- | :--- |
+| Dokumentasi Proposal & Laporan final | **Mekar Cendra Narwastu** | 123140074 |
+| Frontend (React-Leaflet) | **Mei Disti Ayuningtias** | 123140076 |
+| Backend (FastAPI) & Database (PostGIS)| **Sahiva Syamdo Vinoza** | 123140194 |
+| Frontend (React-Leaflet) | **Arta Eka Yuly Rajagukguk** | 123140209 |
 
 * **Dosen Pengampu:** 
   * Muhammad Habib Algifari, S.Kom., M.T.I.
